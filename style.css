@@ -1,0 +1,163 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body styling */
+body {
+    background: linear-gradient(135deg, #e3ffe7, #d9e7ff);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+/* Container styling */
+#container {
+    width: 90%;
+    max-width: 600px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Header styling */
+header h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #4a90e2;
+    margin-bottom: 20px;
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Form styling */
+.note-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.note-form input,
+.note-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 1rem;
+    background-color: #f7faff;
+    outline: none;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+.note-form input:focus,
+.note-form textarea:focus {
+    border-color: #4a90e2;
+    background-color: #eef7ff;
+}
+
+.note-form button {
+    background-color: #4a90e2;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.note-form button:hover {
+    background-color: #357ab8;
+    transform: scale(1.05);
+}
+
+/* Notes output styling */
+#output {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+#output div {
+    background-color: #fefefe;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.3s ease;
+}
+
+#output div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+#output h1 {
+    font-size: 1.4rem;
+    margin: 0;
+    color: #333;
+}
+
+#output p {
+    font-size: 1rem;
+    color: #666;
+    margin: 0;
+}
+
+/* Delete button styling */
+#output button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    align-self: flex-end;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#output button:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+
+/* Responsive grid layout for larger screens */
+@media (min-width: 768px) {
+    #output {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Add subtle animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#output div {
+    animation: fadeIn 0.5s ease-in-out;
+}
